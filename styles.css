@@ -1,0 +1,561 @@
+:root {
+    --bg-dark: #0a0410;
+    --bg-light: #160a22;
+    --primary: #9b51e0;
+    --primary-glow: rgba(155, 81, 224, 0.6);
+    --secondary: #d18ce0;
+    --text-main: #f2e6ff;
+    --text-muted: #c4a1e0;
+    --glass-bg: rgba(26, 12, 40, 0.4);
+    --glass-border: rgba(155, 81, 224, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: url('assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Particles Container */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Removed background radial-gradient to show body background */
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.2rem 2.5rem; /* Much more compact padding */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+/* Intro Section Styles */
+#intro-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e6d5f7;
+    position: relative;
+    padding: 3rem;
+}
+
+.intro-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsive */
+}
+
+.intro-card.quote-side {
+    background: linear-gradient(135deg, #ffffff 0%, #f2e6ff 100%);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(155, 81, 224, 0.2);
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.intro-music-card {
+    width: 300px;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #ffffff 0%, #e6d5f7 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(155, 81, 224, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border: 3px solid var(--secondary);
+}
+
+.intro-music-card .album-cover {
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(155, 81, 224, 0.4);
+}
+
+.intro-music-card .player-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    color: var(--primary);
+    line-height: 1.6;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 3rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--secondary);
+    font-weight: 600;
+    text-transform: lowercase;
+    animation: bounce 2s infinite;
+}
+
+.hint-subtext {
+    font-size: 0.95rem; /* Larger and clearer */
+    font-weight: 500;
+    opacity: 0.9;
+    color: var(--secondary); /* Using secondary color for better visibility */
+    margin-bottom: 0.2rem;
+}
+
+.hero {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 500;
+}
+
+.sub-hero {
+    margin-top: 1.5rem; /* Reduced from 5rem */
+    padding-bottom: 0;
+}
+
+h1.glitch {
+    font-size: 2.2rem; /* Compact and elegant size */
+    font-weight: 800;
+    color: white;
+    position: relative;
+    text-shadow: 0 0 15px rgba(155, 81, 224, 0.8);
+    margin-bottom: 0.2rem;
+}
+
+.guide-text {
+    font-size: 1.1rem; /* Smaller as requested */
+    color: var(--secondary);
+    font-weight: 600; 
+    margin-top: 0.5rem;
+    animation: bounce 2s infinite;
+    text-transform: uppercase;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-5px);}
+    60% {transform: translateY(-3px);}
+}
+
+/* Interests Section Removida do HTML */
+
+
+/* Gallery Section */
+.gallery {
+    padding: 0.5rem 2rem 2rem 2rem; /* Minimized top padding */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.photo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+    background-color: #a476d9; /* Tom de lilás para o fundo do conjunto */
+    padding: 4rem;
+    border-radius: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Linha central da timeline */
+.photo-grid::before {
+    content: '';
+    position: absolute;
+    top: 4rem;
+    bottom: 4rem;
+    left: 50%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(-50%);
+}
+
+/* Ajustes dos cards para a timeline */
+.photo-grid .photo-card {
+    width: calc(50% - 3rem); /* Deixa 3rem de espaço até o centro */
+    margin: 0;
+}
+
+/* Cards da esquerda (ímpares) */
+.photo-grid .photo-card:nth-child(odd) {
+    align-self: flex-start;
+}
+
+/* Cards da direita (pares) */
+.photo-grid .photo-card:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* Pontinhos na linha central */
+.photo-grid .photo-card::after {
+    content: '';
+    position: absolute;
+    top: 30px; /* Alinhado perto do topo do card */
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-dark);
+    border: 3px solid var(--text-main);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.photo-grid .photo-card:nth-child(odd)::after {
+    right: -3rem; /* Empurra para o centro */
+    transform: translateX(50%);
+}
+
+.photo-grid .photo-card:nth-child(even)::after {
+    left: -3rem; /* Empurra para o centro */
+    transform: translateX(-50%);
+}
+
+.photo-card {
+    border-radius: 15px;
+    position: relative;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    border: 3px solid var(--secondary);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--glass-bg);
+    perspective: 1000px;
+}
+
+.photo-card.static-card {
+    cursor: default;
+}
+
+.photo-card.static-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.photo-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #ffffff 0%, #e6d5f7 100%);
+    color: var(--primary);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centered as requested */
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.song-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Outfit', sans-serif;
+}
+
+.album-cover {
+    width: 90%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(155, 81, 224, 0.4), 0 0 10px rgba(0,0,0,0.1);
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.play-pause-btn {
+    background: var(--primary);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.play-pause-btn:hover {
+    transform: scale(1.1);
+    background: var(--secondary);
+}
+
+.progress-bar {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+    height: 4px;
+}
+
+.card-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: var(--secondary);
+    z-index: 5;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.photo-card.revealed .card-cover {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.5) rotate(15deg);
+    filter: blur(10px);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-video {
+    width: 90%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(155, 81, 224, 0.4), 0 0 10px rgba(0,0,0,0.1);
+}
+
+.photo-card.revealed .card-inner .card-front img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photo-card.revealed .card-inner,
+.photo-card.video-card .card-inner,
+.photo-card.static-card .card-inner {
+    visibility: visible;
+}
+
+.photo-card:not(.revealed):not(.static-card) .card-inner {
+    visibility: hidden;
+}
+
+/* Prank Card Styles */
+.prank-card.revealed {
+    background: white !important;
+    border-color: #9b51e0;
+}
+
+.prank-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    background: white;
+}
+
+.photo-card.revealed .prank-content {
+    opacity: 1;
+}
+
+.kuromi-prank-img {
+    width: 150px !important;
+    height: auto !important;
+    margin-bottom: 1rem;
+    opacity: 1 !important;
+}
+
+.prank-content p {
+    color: #9b51e0;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.photo-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 25px var(--secondary);
+    transform: translateY(-5px);
+    z-index: 10;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Message Section */
+.message {
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.message-panel {
+    max-width: 800px;
+    text-align: center;
+}
+
+.message-panel h2 {
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.message-panel p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    font-weight: 300;
+}
+
+.heart {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--primary);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    h1.glitch { font-size: 4rem; }
+    .glass-panel { padding: 2rem; }
+    .interests { flex-direction: column; }
+    
+    /* Responsive timeline (Mobile) */
+    .photo-grid {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .photo-grid::before {
+        display: none; /* Remove a linha central no celular para poupar espaço */
+    }
+    .photo-grid .photo-card {
+        width: 100%;
+        align-self: center !important;
+        margin-left: 0 !important;
+    }
+    .photo-grid .photo-card::after {
+        display: none !important; /* Remove pontinhos no celular */
+    }
+}
